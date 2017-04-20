@@ -21,7 +21,7 @@ app.get('/page_full_width', pages.page_full_width);
 
 
 // some environment variables
-app.set('port', process.env.PORT || 3000);
+app.set('port', 'https://taplamweb.herokuapp.com/');
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
