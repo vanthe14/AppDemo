@@ -22,7 +22,7 @@ app.get('/page_full_width', pages.page_full_width);
 
 // some environment variables
 
-app.set('port', process.env.PORT || 8080);
+app.set('port', process.env.PORT || 3000);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
