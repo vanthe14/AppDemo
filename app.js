@@ -8,6 +8,7 @@ var home    = require('./routes/home');
 var features    = require('./routes/features');
 var notes = require('./routes/notes');
 var pages = require('./routes/pages');
+var blogs = require('./routes/blogs');
 
 var app = express();
 
@@ -17,7 +18,12 @@ app.use('/features',  features);
 app.get('/index_slider', notes.index_slider);
 app.get('/index_gallery', notes.index_gallery);
 app.get('/page_full_width', pages.page_full_width);
-
+app.get('/blog_single', blogs.blog_single);
+app.get('/blog_style1', blogs.blog_style1);
+app.get('/blog_style2', blogs.blog_style2);
+app.get('/blog_style3', blogs.blog_style3);
+app.get('/blog_style4', blogs.blog_style4);
+//app.use('/blog',  blogs);
 
 
 // some environment variables
