@@ -37,7 +37,7 @@ app.get("/",function(req,res){
  // console.log('Express server listening on port ' + app.get('port'));
 //});
 var server = http.createServer(app)
-server.listen(port)
+server.listen(app.get('port'))
 
 console.log("http server listening on %d", port)
 
