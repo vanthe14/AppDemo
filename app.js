@@ -9,6 +9,7 @@ var features    = require('./routes/features');
 var notes = require('./routes/notes');
 var pages = require('./routes/pages');
 var blogs = require('./routes/blogs');
+var gallerys = require('./routes/gallerys');
 
 var app = express();
 
@@ -23,6 +24,12 @@ app.get('/blog_style1', blogs.blog_style1);
 app.get('/blog_style2', blogs.blog_style2);
 app.get('/blog_style3', blogs.blog_style3);
 app.get('/blog_style4', blogs.blog_style4);
+
+app.get('/gallery_single', gallerys.gallery_single);
+app.get('/gallery_3col', gallerys.gallery_3col);
+app.get('/gallery_4col_circle', gallerys.gallery_4col_circle);
+app.get('/gallery_4col', gallerys.gallery_3col);
+app.get('/gallery_6col', gallerys.gallery_6col);
 //app.use('/blog',  blogs);
 
 
