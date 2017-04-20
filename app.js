@@ -1,5 +1,5 @@
 var express    = require("express");
-var WebSocketServer = require("ws").Server
+
 var path = require('path');
 var http = require('http');
 // var fs = require('fs');
@@ -33,26 +33,6 @@ app.get("/",function(req,res){
 });
 
 
-//http.createServer(app).listen(app.get('port'), function(){
- // console.log('Express server listening on port ' + app.get('port'));
-//});
-var server = http.createServer(app)
-server.listen(app.get('port'))
-
-console.log("http server listening on %d", port)
-
-var wss = new WebSocketServer({server: server})
-console.log("websocket server created")
-
-wss.on("connection", function(ws) {
-  var id = setInterval(function() {
-    ws.send(JSON.stringify(new Date()), function() {  })
-  }, 1000)
-
-  console.log("websocket connection open")
-
-  ws.on("close", function() {
-    console.log("websocket connection close")
-    clearInterval(id)
-  })
-})
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});
