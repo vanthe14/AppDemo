@@ -2,6 +2,8 @@ var express    = require("express");
 
 var path = require('path');
 var http = require('http');
+var engine = require('ejs-locals');
+
 // var fs = require('fs');
 
 var home    = require('./routes/home');
@@ -35,8 +37,13 @@ app.get('/gallery_6col', gallerys.gallery_6col);
 
 // some environment variables
 app.set('port', process.env.PORT || 3000);
-app.set('view engine', 'ejs');
+
+
 app.set('views', path.join(__dirname, 'views'));
+app.engine('ejs', engine);
+app.set('view engine', 'ejs');
+
+//app.set('layout', '/views/templates/layout');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
